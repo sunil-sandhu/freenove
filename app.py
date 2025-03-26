@@ -12,6 +12,18 @@ def control_motor(direction):
     elif direction == 'backward':
         PWM.setMotorModel(-1000, -1000, -1000, -1000)
         return jsonify({"status": "Car moving backward"})
+    elif direction == 'left':
+        PWM.setMotorModel(1000, -1000, 1000, -1000)
+        return jsonify({"status": "Car moving left"})
+    elif direction == 'right':
+        PWM.setMotorModel(-1000, 1000, -1000, 1000)
+        return jsonify({"status": "Car moving right"})
+    elif direction == 'rotate_left':
+        PWM.setMotorModel(1000, 1000, -1000, -1000)
+        return jsonify({"status": "Car rotating left"})
+    elif direction == 'rotate_right':
+        PWM.setMotorModel(-1000, -1000, 1000, 1000)
+        return jsonify({"status": "Car rotating right"})
     elif direction == 'stop':
         PWM.setMotorModel(0, 0, 0, 0)
         return jsonify({"status": "Car stopped"})
