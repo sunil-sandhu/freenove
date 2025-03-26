@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from Server.Motor import Motor  # Updated import path to point to Server directory
+from .Server.Motor import Motor  # Updated import path to point to Server directory
 
 app = Flask(__name__)
 PWM = Motor()
